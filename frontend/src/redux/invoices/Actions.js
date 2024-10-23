@@ -7,7 +7,7 @@ export const getInvoices = (page=1, limit=3) => {
   return async (dispatch) => {
     dispatch({ type: 'GET_INVOICES_REQUEST' });
     try {
-        const response = await axios.get(`http://localhost:8800/api/invoice?page=${page}&limit=${limit}`)
+        const response = await axios.get(`${import.meta.env.VITE_LOCALHOST}/api/invoice?page=${page}&limit=${limit}`)
         dispatch({
             type: GET_INVOICES,
             payload: {

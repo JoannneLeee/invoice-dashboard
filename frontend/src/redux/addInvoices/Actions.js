@@ -9,7 +9,7 @@ export const addInvoice = (invoiceData) => {
   return async (dispatch) => {
     dispatch({type: ADD_INVOICE_REQUEST})
     try {
-        const response = await axios.post('http://localhost:8800/api/invoice', invoiceData);
+        const response = await axios.post(`${import.meta.env.VITE_LOCALHOST}/api/invoice`, invoiceData);
         dispatch({
             type: ADD_INVOICE_SUCCESS,
             payload: response.data
